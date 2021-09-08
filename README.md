@@ -125,3 +125,9 @@ kubectl delete -f manifests/deployment-nginx.yaml
 
 curl http://localhost:30000/ # or go to the web page in browser
 ```
+
+### Deleting a Cluster 
+
+```sh
+minikube delete --all # will delete all minikube clusters
+```
