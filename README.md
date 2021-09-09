@@ -13,7 +13,7 @@ Kind works on MacOS, Linux and Windows.
 You need to create the Kind cluster before running deployments against it. WSL2 requires the cluster-config to be passed in order to access it externally.
 
 ```sh
- kind create cluster --name aa-test --config=kind-cluster-config.yaml # if name left blank defaults to kind
+kind create cluster --name aa-test --config=kind-cluster-config.yaml # if name left blank defaults to kind
 ```
 ### Deploying a workload
 
@@ -96,21 +96,21 @@ minikube image load test-dotnet:1.0.0
 Apply the manifest to the cluster
 
 ```sh
-kubectl apply -f local_k8s/manifests/deployment-dotnet-simple.yaml --context kind-aa-test
+kubectl apply -f manifests/deployment-dotnet-simple.yaml 
 
-kubectl get pods --context kind-aa-test
+kubectl get pods 
 ```
 
 Describing the pod
 
 ```sh
-kubectl describe pod simple-dotnet-bf85f5cc4-5vh79 --context kind-aa-test
+kubectl describe pod <pod name>
 ```
 
 Clean up
 
 ```sh
-kubectl delete -f local_k8s/manifests/deployment-dotnet-simple.yaml
+kubectl delete -f manifests/deployment-dotnet-simple.yaml
 ```
 
 Nginx example
